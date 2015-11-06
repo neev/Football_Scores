@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/widget_margin">
+
+    <LinearLayout
+        android:id="@+id/widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:paddingEnd="5dp"
+        android:paddingLeft="5dp"
+        android:paddingStart="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/primary"
+        android:layout_gravity="center_horizontal"
+        >
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_launcher"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#4B4B4D"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:textAlignment="center"
+            android:layout_marginTop="7dp"/>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/primary_light">
+
+        <TextView
+            android:id="@+id/widget_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/empty_forecast_list"
+            android:textColor="@color/accent_material_light"
+            android:layout_marginTop="10dp"/>
+
+        <ListView
+            android:id="@+id/widget_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            tools:listitem="@layout/widget_detail_list_item"
+            android:layout_gravity="center_horizontal|top"/>
+    </FrameLayout>
+
+</LinearLayout>
